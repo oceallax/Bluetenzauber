@@ -3,8 +3,8 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="HelloDataSource" version="3.0">
-	<display-name>"HelloDataSource"</display-name>
+	id="WebengShop" version="3.0">
+	<display-name>"WebengShop"</display-name>
 
  	<servlet>
 		<servlet-name>H2Console</servlet-name>
@@ -20,24 +20,34 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
-	
- 	<!--  servlet>
- 		<description>
- 		</description>
- 		<display-name>MyServlet</display-name>
- 		<servlet-name>MyServlet</servlet-name>
- 		<servlet-class>MyServlet</servlet-class>
- 	</servlet-->
 	<servlet-mapping>
 		<servlet-name>H2Console</servlet-name>
 		<url-pattern>/console/*</url-pattern>
 	</servlet-mapping>
-	<!--  servlet-mapping>
-		<servlet-name>MyServlet</servlet-name>
-		<url-pattern>/MyServlet</url-pattern>
-	</servlet-mapping-->
+	
+		<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>org.apache.myfaces.webapp.MyFacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
-
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+		
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	<listener>
+	     <listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
+	 </listener>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -62,6 +72,26 @@
 		<param-name>db.tcpServer</param-name>
 		<param-value>-tcpAllowOthers</param-value>
 	</context-param>
+	
+		<context-param>
+		<param-name>test</param-name>
+		<param-value>123</param-value>
+	</context-param>
+	
+	<!-- Time in seconds that facelets should be checked for changes since last request. A value of -1 disables refresh checking. -->
+	<context-param>
+		<param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+		<param-value>0</param-value>
+	</context-param>
+
+	<!-- Set the project stage to "Development", "UnitTest", "SystemTest", or "Production". -->
+	<!-- An optional parameter that makes troubleshooting errors much easier. -->
+	<!-- You should remove this context parameter before deploying to production! -->
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	
 	<listener>
 	    <listener-class>org.h2.server.web.DbStarter</listener-class>
 	</listener>

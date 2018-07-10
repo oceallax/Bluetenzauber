@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+
+    <application>
+        <locale-config>
+            <default-locale>de</default-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>lang.lang</base-name>
+            <var>msg</var>
+        </resource-bundle>
+    </application>
+    
+    
+    <navigation-rule>
+    	<display-name>pages/home.xhtml</display-name>
+    	<from-view-id>/pages/home.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-action>#{articleBean.test}</from-action>
+    		<from-outcome>test</from-outcome>
+    		<to-view-id>/pages/overview.xhtml</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<display-name>pages/overview.xhtml</display-name>
+    	<from-view-id>/pages/overview.xhtml</from-view-id>
+    	<navigation-case>
+    		<to-view-id>/pages/details.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+
+</faces-config>

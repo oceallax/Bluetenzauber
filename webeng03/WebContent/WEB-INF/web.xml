@@ -4,21 +4,23 @@
 	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
-	id="HelloServlet" version="3.0">
-	<display-name>"HelloServlet"</display-name>
-	<!-- servlet>
+	id="Praktikum03" version="3.0">
+	<display-name>"Praktikum03"</display-name>
+	<filter>
 		<description>
 		</description>
-		<display-name>MyFirstServlet</display-name>
-		<servlet-name>MyFirstServlet</servlet-name>
-		<servlet-class>MyFirstServlet</servlet-class>
-	</servlet-->
+		<display-name>Auth</display-name>
+		<filter-name>Auth</filter-name>
+		<filter-class>webeng03.Auth</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Auth</filter-name>
+		<url-pattern>/Auth</url-pattern>
+			<!--  url-pattern>/Stats</url-pattern-->
+		<!--servlet-name>Stats</servlet-name-->
+	</filter-mapping>
 
-	<!--  servlet-mapping>
-		<servlet-name>MyFirstServlet</servlet-name>
-		<url-pattern>/MyFirstServlet</url-pattern>
-	</servlet-mapping-->
-	
+
 	<!-- servlet configuration not needed when Annotation WebServlet is added  -->
  	<!-- <servlet> 
 		<description>
@@ -31,6 +33,16 @@
 		<servlet-name>HelloServlet</servlet-name>
 		<url-pattern>/HelloServlet</url-pattern>
 	</servlet-mapping> -->
+	
+	<context-param>
+		<param-name>test</param-name>
+		<param-value>123</param-value>
+	</context-param>
+	
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>

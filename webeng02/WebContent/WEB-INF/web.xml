@@ -4,21 +4,10 @@
 	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
-	id="HelloServlet" version="3.0">
-	<display-name>"HelloServlet"</display-name>
-	<!-- servlet>
-		<description>
-		</description>
-		<display-name>MyFirstServlet</display-name>
-		<servlet-name>MyFirstServlet</servlet-name>
-		<servlet-class>MyFirstServlet</servlet-class>
-	</servlet-->
+	id="Praktikum02" version="3.0">
+	<display-name>"Praktikum02"</display-name>
 
-	<!--  servlet-mapping>
-		<servlet-name>MyFirstServlet</servlet-name>
-		<url-pattern>/MyFirstServlet</url-pattern>
-	</servlet-mapping-->
-	
+
 	<!-- servlet configuration not needed when Annotation WebServlet is added  -->
  	<!-- <servlet> 
 		<description>

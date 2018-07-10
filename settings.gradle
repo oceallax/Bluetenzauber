@@ -3,5 +3,15 @@ rootProject.name = 'praktikum.webeng'
 include 'helloJava'
 include 'helloServlet'
 include 'helloDataSource'
+include 'webeng02'
+include 'webeng03'
+include 'WebengShop'
+include 'WebengShop1'
+include 'WebengShop2'
+include 'Bluetenzauber'
+
+
+
+
 
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15301264050520" configfile="/Bluetenzauber/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pages/login.xhtml" x="14" y="103" id="pf15302833064852" path="/pages/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/navigation.xhtml" x="480" y="103" id="pf15302833064853" path="/pages/navigation.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/overview.xhtml" x="480" y="12" id="pf15302833064854" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15302833064855" inlinks="pf15308744720696" path="/pages/overview.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/registration_finish.xhtml" x="252" y="103" id="pf15302833064856" path="/pages/registration_finish.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/registration.xhtml" x="117" y="103" id="pf15302833065007" path="/pages/registration.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/shoppingcart.xhtml" x="12" y="192" id="pf15302833065008" path="/pages/shoppingcart.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/details.xhtml" x="612" y="12" id="pf15302833065009" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15302833064855" path="/pages/details.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/finish_shopping.xhtml" x="168" y="192" id="pf153028330650010" path="/pages/finish_shopping.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/footer.xhtml" x="239" y="12" id="pf153028330650011" path="/pages/footer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/header.xhtml" x="124" y="12" id="pf153028330650012" path="/pages/header.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/home.xhtml" id="pf15308744720697" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15308744720696" path="/pages/home.xhtml"/>
+  <links id="pf15302833064855" target="pf15302833065009" source="pf15302833064854"/>
+  <links id="pf15308744720696" target="pf15302833064854" source="pf15308744720697" outcome="test" redirect="true" fromaction="#{articleBean.test}"/>
+</pageflow:Pageflow>

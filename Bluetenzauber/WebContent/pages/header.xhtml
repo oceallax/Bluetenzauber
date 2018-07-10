@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+<h:head>
+	<title>Header</title>
+</h:head>
+
+<h:body>
+	
+	<h1> Blumenshop Blütenzauber</h1>
+	
+	<!-- TODO Suche erst nach Eingabe des ersten Buchstaben starten -->
+	<!-- TODO Mehrer Ergebnisse (Liste von Artikeln)-->
+	<!-- TODO Auswahl aus Liste (Direkt zur Detailansicht) -->
+	
+	<!-- Suchfunktion mit Ajax-->
+	<h:form id ="searchmask">
+		<h:outputText value ="Suche "/>
+		
+		<h:inputText id ="search" value ="#{articleBean.search}">
+		
+			<h:commandButton value="Suche nach Bezeichnung" action="#{articleBean.searchByName}">
+	        	<f:ajax execute="search" render="output"></f:ajax>
+	    	</h:commandButton>
+			
+			<f:ajax event="keyup" render="ergebnis" listener="#{articleBean.searchListener}"/>
+		</h:inputText>
+		<h:dataTable value ="#{articleBean.articlesFromSearch}" var="ergebnis" id ="ergebnis">
+			<h:column>
+				<h:outputText id = "output" value ="#{ergebnis.name}"/>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	
+	<!-- h:form>
+	    <h:inputText id="search" value="#{bookBean.searchString}"></h:inputText>
+	    <h:commandButton value="Search by title" action="#{bookBean.searchByTitle(bookBean.searchString)}">
+	        <f:ajax execute="search" render="output"></f:ajax>
+	    </h:commandButton>
+	    <h2><h:outputText id="output" value="#{bookBean.book.title}"></h:outputText>
+	    </h2>
+	</h:form-->
+		    
+	<!-- TODO Button Warenkorb -->
+	
+	<!-- User ist angemeldet: -->
+	<!-- TODO Hallo xy -->
+	<!-- TODO Logout -->
+	
+	<!-- User ist nicht angemeldet: -->
+	<!-- TODO Anmelden Link -->
+
+
+</h:body>
+</html>
