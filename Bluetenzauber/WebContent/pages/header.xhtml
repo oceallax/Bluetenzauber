@@ -22,12 +22,11 @@
 	
 	<!-- Suchfunktion mit Ajax-->
 	<h:form id ="searchmask">
-		<h:outputText value ="Suche "/>
 		
 		<h:inputText id ="search" value ="#{articleBean.search}">
 		
-			<h:commandButton value="Suche nach Bezeichnung" action="#{articleBean.searchByName}">
-	        	<f:ajax execute="search" render="output"></f:ajax>
+			<h:commandButton 
+				value="Suche " action="#{articleBean.searchByName}">
 	    	</h:commandButton>
 			
 			<f:ajax event="keyup" render="ergebnis" listener="#{articleBean.searchListener}"/>
@@ -39,14 +38,6 @@
 		</h:dataTable>
 	</h:form>
 	
-	<!-- h:form>
-	    <h:inputText id="search" value="#{bookBean.searchString}"></h:inputText>
-	    <h:commandButton value="Search by title" action="#{bookBean.searchByTitle(bookBean.searchString)}">
-	        <f:ajax execute="search" render="output"></f:ajax>
-	    </h:commandButton>
-	    <h2><h:outputText id="output" value="#{bookBean.book.title}"></h:outputText>
-	    </h2>
-	</h:form-->
 		    
 	<!-- TODO Button Warenkorb -->
 	

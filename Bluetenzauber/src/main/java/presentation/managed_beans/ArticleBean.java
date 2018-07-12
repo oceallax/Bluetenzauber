@@ -14,7 +14,8 @@ import transferobjects.BunchOfFlowers;
 import transferobjects.Plant;
 
 @ManagedBean(name = "articleBean")
-@ViewScoped
+//Wegen Suche, dass Artikel von Suche nicht verloren gehen
+@SessionScoped
 //TODO Unterscheiden, welche Kategorie in overview.xhtml dargestellt wird.???
 public class ArticleBean implements Serializable {
 	
@@ -50,14 +51,23 @@ public class ArticleBean implements Serializable {
 		articlesFromSearch = articleManager.searchArticles(thisArticle);
 	}
 	
-	//TODO
-	public void searchByName(String searchInput){
+	/*
+	 * searchByName()
+	 * Führt auf Seite mit Ergebnissen oder
+	 * auf No-Result Seite
+	 */
+	public String searchByName(){
 		
+		//TODO Redirect
+		if(articlesFromSearch.isEmpty()) {
+			
+			//Artikel konnten nicht gefunden werden
+			return "search_no_result.xhtml";
+			
+		}
 		
-		//Get UserInput
-		//Gehe zur Detailansicht eines Artikels
-		//oder No Result
-	
+		//Zeige gefundene Artikel an
+		return "search_result.xhtml";
 
 	}
 
